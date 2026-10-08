@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <meta name="description" content="Explore public GitHub profiles and repositories with GitHub Developer Explorer.">
+    <title>GitHub Developer Explorer</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="GitHub Developer Explorer home">
+        <span>Developer<span class="brand-light">Explorer</span></span>
+      </a>
+      <a class="header-link" href="https://github.com" target="_blank" rel="noopener noreferrer">
+        GitHub
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main id="main-content">
+      <section class="search-section" aria-labelledby="page-title">
+        <h1 id="page-title">Search another developer</h1>
+        <form class="search-form" id="search-form" novalidate>
+          <label class="visually-hidden" for="username-input">GitHub username</label>
+          <input
+            id="username-input"
+            name="username"
+            type="text"
+            placeholder="Enter a GitHub username"
+            autocomplete="off"
+            autocapitalize="none"
+            spellcheck="false"
+            aria-describedby="search-message"
+            aria-invalid="false"
+          >
+          <button class="search-button" id="search-button" type="submit">
+            <span class="button-label">Explore</span>
+            <span class="button-arrow" aria-hidden="true">→</span>
+          </button>
+        </form>
+        <p class="search-message" id="search-message" aria-live="polite"></p>
+      </section>
+
+      <section class="results" id="results" aria-busy="false">
+        <div class="initial-state" id="initial-state">
+          <div class="initial-art" aria-hidden="true">
+            <span class="orbit orbit-one"></span>
+            <span class="orbit orbit-two"></span>
+            <span class="initial-symbol">&lt;/&gt;</span>
+            <span class="orbit-node node-one"></span>
+            <span class="orbit-node node-two"></span>
+          </div>
+          <h2>Curiosity starts with a username.</h2>
+          <p>Search a GitHub developer to explore their public profile and repositories.</p>
+          <div class="initial-note"><span aria-hidden="true">↳</span> Profiles, projects, and a little inspiration.</div>
+        </div>
+
+        <div class="loading-state" id="loading-state" role="status" aria-live="polite" hidden>
+          <div class="loading-heading">
+            <span class="loading-avatar skeleton"></span>
+            <div class="loading-lines">
+              <span class="skeleton line-long"></span>
+              <span class="skeleton line-short"></span>
+            </div>
+          </div>
+          <div class="loading-stats">
+            <span class="skeleton"></span><span class="skeleton"></span><span class="skeleton"></span>
+          </div>
+          <p>Looking up that developer<span class="loading-dots" aria-hidden="true">...</span></p>
+        </div>
+
+        <div class="results-content" id="results-content" hidden>
+          <section class="developer-section" aria-labelledby="developer-title">
+            <h2 class="developer-title" id="developer-title">Developer</h2>
+            <div class="profile-card" id="profile-card" aria-labelledby="profile-name">
+              <div class="profile-main">
+                <img class="profile-avatar" id="profile-avatar" alt="" width="112" height="112">
+                <div class="profile-identity">
+                  <h2 id="profile-name"></h2>
+                  <a class="profile-username" id="profile-username" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+              </div>
+              <dl class="profile-stats" id="profile-stats"></dl>
+              <a class="profile-link" id="profile-link" target="_blank" rel="noopener noreferrer">
+                View GitHub Profile <span aria-hidden="true">↗</span>
+              </a>
+              <p class="profile-bio" id="profile-bio" hidden></p>
+              <div class="profile-details" id="profile-details"></div>
+            </div>
+          </section>
+
+          <section class="repositories-section" aria-labelledby="repositories-title">
+            <div class="section-heading">
+              <h2 id="repositories-title" tabindex="-1">Repositories</h2>
+              <span class="repo-count" id="repo-count"></span>
+            </div>
+            <div class="repository-grid" id="repository-grid"></div>
+            <p class="empty-repositories" id="empty-repositories" hidden>No public repositories were found for this user.</p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Built for curious minds.</span>
+      <span>Data provided by the <a href="https://docs.github.com/en/rest" target="_blank" rel="noopener noreferrer">GitHub REST API</a></span>
+    </footer>
+  </body>
+</html>

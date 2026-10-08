@@ -1,0 +1,152 @@
+@media (max-width: 760px) {
+  .site-header,
+  main,
+  .site-footer {
+    width: min(100% - 40px, var(--content-width));
+  }
+
+  .search-section {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0 23px;
+  }
+
+  .search-form {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .repository-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-card {
+    gap: 17px 22px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header,
+  main,
+  .site-footer {
+    width: min(100% - 32px, var(--content-width));
+  }
+
+  .site-header {
+    min-height: 64px;
+  }
+
+  .search-section {
+    margin: 20px 0 19px;
+  }
+
+  .search-section h1 {
+    font-size: 1.08rem;
+  }
+
+  .search-form {
+    min-height: 46px;
+    gap: 4px;
+  }
+
+  .search-form input {
+    padding-inline: 8px;
+    font-size: 0.82rem;
+  }
+
+  .search-button {
+    gap: 7px;
+    padding-inline: 11px;
+    font-size: 0.74rem;
+  }
+
+  .results-content {
+    gap: 24px;
+  }
+
+  .profile-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .profile-main {
+    gap: 14px;
+  }
+
+  .profile-avatar {
+    width: 68px;
+    height: 68px;
+  }
+
+  .profile-identity h2 {
+    font-size: 1.25rem;
+  }
+
+  .profile-username {
+    font-size: 0.81rem;
+  }
+
+  .profile-stats {
+    justify-content: space-between;
+    gap: 10px;
+    padding-block: 14px;
+    border-top: 1px solid #edf0f5;
+    border-bottom: 1px solid #edf0f5;
+  }
+
+  .stat {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .stat dd {
+    font-size: 1rem;
+  }
+
+  .stat dt {
+    font-size: 0.67rem;
+  }
+
+  .profile-link {
+    width: 100%;
+  }
+
+  .profile-details {
+    gap: 10px 14px;
+    padding-top: 13px;
+  }
+
+  .profile-detail {
+    font-size: 0.72rem;
+  }
+
+  .repository-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .repository-card {
+    min-height: 156px;
+    padding: 17px;
+  }
+
+  .repository-description {
+    min-height: auto;
+    -webkit-line-clamp: 3;
+  }
+
+  .repository-updated {
+    margin-left: 0;
+  }
+
+  .site-footer {
+    min-height: 68px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.67rem;
+  }
+}
